@@ -16,13 +16,13 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends supervisor x11vnc lxde xvfb wget openjdk-7-jdk \
  && rm -rf /var/lib/apt/lists/*
 
-ENV OPENOFFICE Apache_OpenOffice_4.1.5_Linux_x86-64_install-deb_en-US.tar.gz
+ENV OPENOFFICE Apache_OpenOffice_4.1.5_Linux_x86-64_install-deb_zh-CN.tar.gz
 
-RUN wget --no-check-certificate https://jaist.dl.sourceforge.net/project/openofficeorg.mirror/4.1.5/binaries/en-US/$OPENOFFICE -O /tmp/$OPENOFFICE
+RUN wget --no-check-certificate https://jaist.dl.sourceforge.net/project/openofficeorg.mirror/4.1.5/binaries/zh-CN/$OPENOFFICE -O /tmp/$OPENOFFICE
 RUN mkdir /tmp/OpenOffice/ \
  && tar -zxvf /tmp/$OPENOFFICE -C /tmp/OpenOffice/ \
- && dpkg -i /tmp/OpenOffice/en-US/DEBS/*.deb \
- && dpkg -i /tmp/OpenOffice/en-US/DEBS/desktop-integration/*.deb \
+    && dpkg -i /tmp/OpenOffice/zh-CN/DEBS/*.deb \
+    && dpkg -i /tmp/OpenOffice/zh-CN/DEBS/desktop-integration/*.deb \
  && rm -rf /tmp/$OPENOFFICE && rm -rf /tmp/OpenOffice
 
 RUN rm /etc/xdg/lxsession/LXDE/autostart
