@@ -1,5 +1,4 @@
 FROM ubuntu:trusty
-MAINTAINER zhouzhi <2929715148@qq.com>
 
 # replace sources
 ADD sources.list /etc/apt/sources.list
