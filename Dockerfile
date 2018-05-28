@@ -34,6 +34,10 @@ RUN chmod +x /root/Desktop/OpenOffice4
 COPY noVNC /noVNC/
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+ADD Fonts.tar.gz /usr/share/fonts/
+
+RUN fc-cache
+
 EXPOSE 6080 8100
 
 CMD ["/usr/bin/supervisord"]
